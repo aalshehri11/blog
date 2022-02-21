@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="w-4/5 m-auto text-center">
+<div class="container px-6 w-4/5 m-auto text-center">
     <div class="py-16 border-b border-gray-200">
         <h1 class="text-6xl">
             Blog Posts
@@ -18,7 +18,7 @@
 @endif
 
 @if (Auth::check()) {{-- Check if User is registered --}}
-    <div class="pt-16 w-4/5 m-auto">
+    <div class="container px-6 pt-16 w-4/5 m-auto">
         <a 
             href="/blog/create"
             class="bg-blue-500 uppercase text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl">
@@ -28,7 +28,7 @@
 @endif
 
 @foreach ($posts as $post)
-    <div class="sm:grid grid-cols-2 gap-20 w-4/5 mx-auto py-16 border-b border-gray-200">
+    <div class="container px-6 sm:grid grid-cols-2 gap-20 w-4/5 mx-auto py-16 border-b border-gray-200">
         <div>
             <img src="{{ asset('images/' . $post->image_path) }}" alt="">
         </div>
